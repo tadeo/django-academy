@@ -1,0 +1,34 @@
+
+APTANA ATAJOS DE TECLADO (made by kbz)
+
+F2						renombrar
+F5						refresh
+manzana + M				magnifica ventanam
+manzana + C				copy
+manzana + P				paste
+manzana + N				new file
+fn + delete				delete (erase file)
+command + F6			te moves entre editors 'pestañas'
+command + F7			te moves entre vistas
+
+command + shift + R		Open Resource, abrir un file
+
+alt + flechas			muevo de lugar la linea, arriba o abajo
+command + alt + flechas	duplica la lunea para arriba o abajo
+
+command + D				borra la linea
+command + O				open outline
+
+manzana + click o F3	sobre una función, y vas a la descripción de la función
+
+manzan + shift + P		te muestra las llaves donde abre y cierra
+
+command + L				te lleva a la línea
+
+control + espacio		sugerencias de ayuda según lenguaje
+
+control + .				autocompleta posiblidades
+
+cobtrol + H				search
+
+command + ,				preferencias
