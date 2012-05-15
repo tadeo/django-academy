@@ -1,6 +1,6 @@
 # Django settings for django_academy project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -152,3 +152,14 @@ LOGGING = {
         },
     }
 }
+
+################################
+####### LOCAL SETTINGS #########
+################################
+try:
+    from local_settings import * #@UnusedWildImport
+except ImportError:
+    pass
+################################
+###### END LOCAL SETTINGS ######
+################################
