@@ -8,5 +8,5 @@ def welcome(request):
     return render_to_response('welcome.html')
 
 def contact(request):
-    #user_name = request.GET['full-name']
-    return render_to_response('contact.html')
+    user_name = request.GET['full-name']
+    return render_to_response('contact.html', {'user_name': user_name})
