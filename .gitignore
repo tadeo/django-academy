@@ -2,3 +2,4 @@
 .pydevproject
 *.pyc
 django_academy/local_settings.py
+.DS_Store
