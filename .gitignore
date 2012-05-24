@@ -1,4 +1,5 @@
 .project
 .pydevproject
 *.pyc
-django_academy/local_settings.py
+/django_academy/local_settings.py
+/django_academy/static/
