@@ -6,7 +6,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, SITE_ROOT)
 
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
