@@ -7,7 +7,6 @@ sys.path.insert(0, SITE_ROOT)
 
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Tadeo Carrier', 'tadeouy@gmail.com'),
@@ -127,7 +126,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'apps.main',
 )
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -167,3 +165,6 @@ except ImportError:
 ################################
 ###### END LOCAL SETTINGS ######
 ################################
+
+
+TEMPLATE_DEBUG = DEBUG
