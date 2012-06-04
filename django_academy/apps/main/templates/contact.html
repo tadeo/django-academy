@@ -4,11 +4,17 @@
 {{ block.super }} Welcome content
 <form action="" method="POST">
 	<fieldset>
-		 <p><label for="full-name">Enter your full name:</label><input name="full-name" id="full-name" type="text" /></p>
-		 <p><label for="email">Enter your email:</label><input name="email" id="email" type="text"/></p>
-		 <p><label for="message">Message:</label><textarea name="message" id="message" type="text"/></textarea></p>		 
+		 <p><label for="full-name">Enter your full name:</label><input name="sender_name" id="sender_name" type="text" /></p>
+		 <p><label for="email">Enter your email:</label><input name="sender_email" id="sender_email" type="text"/></p>
+		 <p><label for="message">Message:</label><textarea name="sender_message" id="sender_message" type="text"></textarea></p>
 		 <input type="submit" value="Send" />
 	</fieldset>
 </form>
+<hr />
+<div>
+	<h2>Mensajes Recibidos</h2>
+		{% block messages_sent %}
+		{% endblock messages_sent %}
+</div>
 <!--Este es el nombre de usuario: {{ user_name }}-->
 {% endblock %}
