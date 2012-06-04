@@ -11,11 +11,11 @@ def welcome(request):
 
 def contactCheck(request):   
     if request.method == 'POST':
-        #name = request.POST.get('sender_name', '')
-        #email = request.POST.get('sender_email', '')
-        #message = request.POST.get('sender_message', '')
-        #sender_obj = MessagesSent(sender_name=name, sender_email=email, sender_message=mesage)
-        #sender_obj.save()
+        name = request.POST.get('sender_name', '')
+        email = request.POST.get('sender_email', '')
+        message = request.POST.get('sender_message', '')
+        sender_obj = MessagesSent(sender_name=name, sender_email=email, sender_message=message)
+        sender_obj.save()
     return contactRetrive(request)   
     
 def contactRetrive(request):
