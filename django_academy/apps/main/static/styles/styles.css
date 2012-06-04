@@ -100,3 +100,113 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+
+
+/* Proyect styles */
+
+html,body {
+	margin:0;
+	padding:0;
+	height:96%; /* needed for container min-height */
+	background-image: url(/images/pattern.gif);
+	
+	font-family:arial,sans-serif;
+	font-size:small;
+	color:#666;
+}
+
+.clear {
+	clear: both;
+}
+
+header h1 {
+	float: left;
+	width: 230px;
+	height: 210px;
+}
+
+h2 {
+	font:1.25em georgia,serif; 
+	margin:0 0 0.5em;
+}
+
+h1, h2, a {
+	color:orange;
+}
+
+p { 
+	line-height:1.5; 
+	margin:0 0 1em;
+}
+
+
+
+section {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	width:800px;
+	background:#fff;
+	
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+}
+
+header {
+	margin-top: 4%;
+	background:#fff url("../images/pattern_menu.gif") repeat-x;
+}
+
+header nav {
+	padding-top: 45px;
+	float: right;
+	list-style: none;
+	height: 96px;
+}
+
+header nav li {
+	float: left;
+	color: #fff;
+	font-size: 14px;
+	padding-left: 14px;
+	padding-right: 14px;
+	height: 97px;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+
+header nav a {
+	color: #666;
+	display: block;
+	float: left;
+	text-decoration: none;
+}
+
+header nav a li:hover {
+	color: #CC0000;
+}
+
+
+
+section {
+	padding:1em 1em 5em; /* bottom padding for footer */
+}
+	section p {
+		text-align:left;
+		padding:0 1em;
+	}
+
+footer {
+	position:absolute;
+	width:100%;
+	bottom:0; /* stick to bottom */
+	background:#000;
+}
+	footer p {
+		padding:1em;
+		margin:0;
+		color: #fff;
+	}
