@@ -9,7 +9,7 @@ def home(request):
 def welcome(request):
     return render_to_response('welcome.html')
 
-def contactCheck(request):   
+def contact(request):   
     if request.method == 'POST':
         name = request.POST.get('sender_name', '')
         email = request.POST.get('sender_email', '')

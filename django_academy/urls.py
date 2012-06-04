@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'apps.main.views.home', name='home'),
      url(r'^welcome/', 'apps.main.views.welcome', name='welcome'),
-     url(r'^contact/', 'apps.main.views.contactCheck', name='contact'),
+     url(r'^contact/', 'apps.main.views.contact', name='contact'),
     # url(r'^django_academy/', include('django_academy.foo.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
