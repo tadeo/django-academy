@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
-{% block main_content %}
-{{ block.super }}Subscribe content
+{% block subscribe_content %}
+<form action="#">
+	<label>Name</label>&nbsp;
+	<input type="text" /><br>
+	<label>Mail</label>&nbsp;
+	<input type="text" /><br>
+	<button type="submit">Send</button>
+</form>
 {% endblock %}
+

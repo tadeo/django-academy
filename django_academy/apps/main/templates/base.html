@@ -27,10 +27,20 @@
 					<a href="{% url home %}">Home</a>
 				</p>
 			</nav>
+			<nav>
+				<p>
+					<a href="{% url subscribe %}">Subscribe</a>
+				</p>
+			</nav>
 
 			<section>
 				{% block main_content %}
 				{% endblock main_content %}
+			</section>
+			
+			<section>
+				{% block subscribe_content %}
+				{% endblock subscribe_content %}
 			</section>
 
 			<footer>
