@@ -1,0 +1,13 @@
+{% extends "contact.html" %}
+
+{% block messages_sent %}
+	<div>-----------</div>
+	{% for message in messages %}
+	<span style="font-size: 15px; font-weight: bold;">{{ message.sender_name }}</span> / <em><a href="mailto:{{ message.sender_email }}">{{ message.sender_email }}</a></em>
+	<p>{{ message.sender_message }}</p>
+	<div>-----------</div>
+	{% endfor %}
+
+{% endblock messages_sent %}
+
+
