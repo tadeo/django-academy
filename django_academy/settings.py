@@ -6,8 +6,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, SITE_ROOT)
 
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
 
 ADMINS = (
     ('Tadeo Carrier', 'tadeouy@gmail.com'),
@@ -167,3 +166,5 @@ except ImportError:
 ################################
 ###### END LOCAL SETTINGS ######
 ################################
+
+TEMPLATE_DEBUG = DEBUG
