@@ -3,6 +3,7 @@
 {% block main_content %}
 {{ block.super }} Welcome content
 <form action="" method="POST">
+	{% csrf_token %}
 	<fieldset>
 		 <p><label for="full-name">Enter your full name:</label><input name="sender_name" id="sender_name" type="text" /></p>
 		 <p><label for="email">Enter your email:</label><input name="sender_email" id="sender_email" type="text"/></p>
