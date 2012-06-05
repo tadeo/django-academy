@@ -1,12 +1,33 @@
 {% extends "base.html" %}
 
 {% block subscribe_content %}
-<form action="#">
-	<label>Name</label>&nbsp;
-	<input type="text" /><br>
+
+<script>
+	function sendMessage(formTag){
+		var emailTo = formTag.elements['email'].value;
+		if (emailTo == ''){
+			alert('Please put an email');
+		}else{
+			location.href = 'mailto:' + emailTo;
+		}
+		return false;
+	}
+</script>
+
+<form action="" onsubmit="" method="POST">
+	{% csrf_token %}
 	<label>Mail</label>&nbsp;
-	<input type="text" /><br>
+	<input name="email" type="text" value="{{ posted_data.email }}" /><br>
+	
+	<label>Name</label>&nbsp;
+	<input name="name" type="text" value="{{ posted_data.name }}" /><br>
+
+	<label>Message</label>&nbsp;
+	<textarea>Your message here</textarea><br>
+	
 	<button type="submit">Send</button>
 </form>
+
+<span class="status {{ message.type }}">{{ message.text }}</span>
 {% endblock %}
 
