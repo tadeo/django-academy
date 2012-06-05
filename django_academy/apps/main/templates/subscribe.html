@@ -16,18 +16,11 @@
 
 <form action="" onsubmit="" method="POST">
 	{% csrf_token %}
-	<label>Mail</label>&nbsp;
-	<input name="email" type="text" value="{{ posted_data.email }}" /><br>
-	
-	<label>Name</label>&nbsp;
-	<input name="name" type="text" value="{{ posted_data.name }}" /><br>
-
-	<label>Message</label>&nbsp;
-	<textarea>Your message here</textarea><br>
-	
+	{{ form.as_ul }}
 	<button type="submit">Send</button>
 </form>
 
-<span class="status {{ message.type }}">{{ message.text }}</span>
+<span class="errors">{{ form.errors }}</span>
+{% if message %}<span class="status">{{ message }}</span>{% endif %}
 {% endblock %}
 

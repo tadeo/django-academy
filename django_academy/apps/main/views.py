@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response
+from apps.main.forms import SubscribeForm
 
 def home(request):
     return render_to_response('home.html')
@@ -9,35 +10,18 @@ def subscribe(request):
     from django.core.context_processors import csrf
     context = {}
     context.update(csrf(request))
+    empty_form = SubscribeForm()
     if request.method == 'GET':
-        context.update({'message':{
-                                       'type': 'initial',
-                                       'text': 'Please put your name.'
-                                       }
-                        })
+        context.update({'form': empty_form})
     elif request.method == 'POST':
-        user_name = request.POST['name']
-        if user_name == '':
-            context.update({'message':{
-                                       'type': 'error',
-                                       'text': 'Please put a name.'
-                                       }
-                            })
-        elif len(user_name)<3:
-            context.update({'message':{
-                                       'type': 'error',
-                                       'text': 'Please put a name longer than 2 characters.'
-                                       }
-                            })
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            context.update({'form': empty_form})
+            context.update({'message': 'Thank you %s' % form.cleaned_data['user_name']})
+            print '>>>>>>> %s' % form.cleaned_data['user_name']
         else:
-            context.update({'message':{
-                                       'type': 'success',
-                                       'text': 'Thank you %s.' % user_name
-                                       }
-                            })
-        if context['message']['type'] == 'error':
-            context.update({'posted_data': request.POST})
+            context.update({'form': form})
 
-        print '>>>>>>> %s' % user_name
+#        print '>>>>>>> %s' % user_name
 
     return render_to_response('subscribe.html', context)
