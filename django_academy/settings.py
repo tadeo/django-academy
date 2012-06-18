@@ -6,8 +6,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, SITE_ROOT)
 
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
 
 ADMINS = (
     ('Tadeo Carrier', 'tadeouy@gmail.com'),
@@ -19,7 +18,7 @@ DATABASES = {
     'default': {
       #  'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': r'db\academy_feedback.db', # Or path to database file if using sqlite3.
+        'NAME': 'academy_feedback.db', # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -99,7 +98,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware', 
+    'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -168,3 +167,5 @@ except ImportError:
 ################################
 ###### END LOCAL SETTINGS ######
 ################################
+
+TEMPLATE_DEBUG = DEBUG

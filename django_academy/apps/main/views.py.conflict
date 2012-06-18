@@ -1,6 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response
-from django.template import loader, Context
+from django.template import loader, Context, RequestContext
 from apps.main.models import MessagesSent
 
 def home(request):
@@ -15,9 +15,20 @@ def contact(request):
         email = request.POST.get('sender_email', '')
         message = request.POST.get('sender_message', '')
         sender_obj = MessagesSent(sender_name=name, sender_email=email, sender_message=message)
+<<<<<<< HEAD
+        sender_obj.save()        
+    return contactRetrive(request)   
+    
+def contactRetrive(request):
+    messages = MessagesSent.objects.all()
+    #return render_to_response('messages_received.html', {'messages': messages})
+    return render_to_response('messages_received.html', messages, context_instance=RequestContext(request))        
+    
+=======
         sender_obj.save()
     return contactRetrive(request)
 
 def contactRetrive(request):
     messages = MessagesSent.objects.all()
     return render_to_response('messages_received.html', {'messages': messages})
+>>>>>>> e9e2ed6cc1436aca2cb63a89a47b19548f6797b7
