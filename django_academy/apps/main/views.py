@@ -6,7 +6,6 @@ def home(request):
     return render_to_response('home.html')
 
 def subscribe(request):
-
     from django.core.context_processors import csrf
     context = {}
     context.update(csrf(request))
