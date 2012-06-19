@@ -16,9 +16,19 @@ def subscribe(request):
             context.update({'form': empty_form})
 
             user_name = form.cleaned_data['user_name']
+            user_email = form.cleaned_data['email']
+            user_message = form.cleaned_data['message']
             context.update({'message': 'Thank you %s' % user_name})
-            new_subscriber = Subscriber(name=user_name)
+            new_subscriber = Subscriber(name=user_name, email=user_email, message=user_message)
             new_subscriber.save()
         else:
             context.update({'form': form})
+            
+    list_subscribers = Subscriber.objects.all().order_by('-id')
+    context.update({'list_subscribers': list_subscribers})
     return render_to_response('subscribe.html', context)
+
+
+
+
+
