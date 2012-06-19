@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response
+from apps.main.models import Subscriber
 from apps.main.forms import SubscribeForm
 
 def subscribe(request):
@@ -13,7 +14,11 @@ def subscribe(request):
         form = SubscribeForm(request.POST)
         if form.is_valid():
             context.update({'form': empty_form})
-            context.update({'message': 'Thank you %s' % form.cleaned_data['user_name']})
+
+            user_name = form.cleaned_data['user_name']
+            context.update({'message': 'Thank you %s' % user_name})
+            new_subscriber = Subscriber(name=user_name)
+            new_subscriber.save()
         else:
             context.update({'form': form})
     return render_to_response('subscribe.html', context)
