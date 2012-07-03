@@ -22,5 +22,16 @@
 
 <span class="errors">{{ form.errors }}</span>
 {% if message %}<span class="status">{{ message }}</span>{% endif %}
+{% if list_subscribers %}
+	<ul>
+	{% for ls in list_subscribers %}
+	    <li>
+	    	<strong>{{ ls.name }}</strong> - &lt;<a href="mailto:{{ ls.email }}">{{ ls.email }}</a>&gt;<br />
+	    	<span>{{ ls.message }}</span>
+	    </li>
+	    <hr />
+	{% endfor %}
+	</ul>
+{% endif %}
 {% endblock %}
 
