@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load url from future %}
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -20,18 +21,21 @@
 	<body>
 		<div>
 			<header>
-				<h1><a href="{% url home %}">Home</a></h1>
+				<h1><a href="{% url 'home' %}">Home</a></h1>
+				<nav class="main_menu">
+					<ul>
+						<li>
+							<a href="{% url 'home' %}">Home</a>
+						</li>
+						<li>
+							<a href="{% url 'subscribers' %}">Subscribers</a>
+						</li>
+						<li>
+							<a href="{% url 'subscribe' %}">Subscribe</a>
+						</li>
+					</ul>
+				</nav>
 			</header>
-			<nav>
-				<p>
-					<a href="{% url home %}">Home</a>
-				</p>
-			</nav>
-			<nav>
-				<p>
-					<a href="{% url subscribe %}">Subscribe</a>
-				</p>
-			</nav>
 
 			<section>
 				{% block main_content %}

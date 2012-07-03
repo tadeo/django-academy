@@ -2,11 +2,14 @@
 from django.shortcuts import render_to_response
 from apps.main.models import Subscriber
 from apps.main.forms import SubscribeForm
+from django.views.generic.detail import DetailView
+from django.contrib.auth.decorators import login_required
 
 def subscribe(request):
     from django.core.context_processors import csrf
     context = {}
     context.update(csrf(request))
+
     empty_form = SubscribeForm()
     if request.method == 'GET':
         context.update({'form': empty_form})
@@ -23,12 +26,15 @@ def subscribe(request):
             new_subscriber.save()
         else:
             context.update({'form': form})
-            
+
     list_subscribers = Subscriber.objects.all().order_by('-id')
     context.update({'list_subscribers': list_subscribers})
     return render_to_response('subscribe.html', context)
 
 
+class SubscriberDetailView(DetailView):
+    def get(self, *args, **kwargs):
+        return super(SubscriberDetailView, self).get(*args, **kwargs)
 
 
 

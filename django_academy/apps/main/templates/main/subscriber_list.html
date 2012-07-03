@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block main_content %}
+	<ul>
+	{% for object in object_list %}
+	    <li>
+	    	<strong><a href="{% url 'subscriber_detail' pk=object.pk %}">{{ object.name }}</a></strong> - &lt;<a href="mailto:{{ object.email }}">{{ object.email }}</a>&gt;<br />
+	    </li>
+	    <hr />
+	{% endfor %}
+	</ul>
+	{% if is_paginated %}
+	<div class="pagination">
+		{% if page_obj.has_previous %}
+		<a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;&nbsp;&nbsp;Previous page</a>
+		{% endif %}
+		{% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}">Next page&nbsp;&nbsp;&nbsp;&gt;</a>
+		{% endif %}
+	</div>
+	{% endif %}
+{% endblock %}
+
