@@ -1,1 +1,0 @@
-[{"pk": 1, "model": "main.subscriber", "fields": {"last_name": "kbz2", "name": "kbz2"}}, {"pk": 2, "model": "main.subscriber", "fields": {"last_name": "kbz", "name": "kbz"}}, {"pk": 3, "model": "main.subscriber", "fields": {"last_name": "gerardo", "name": "gerardo"}}, {"pk": 4, "model": "main.subscriber", "fields": {"last_name": "gerardo", "name": "gerardo"}}]
