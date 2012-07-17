@@ -53,3 +53,17 @@ class Student(models.Model):
 
     def __unicode__(self):
         return u'Student %s at %s' % (self.user_profile, self.course)
+
+
+class Teacher(models.Model):
+    '''A model representing the Teacher-Course relationship (assistances, etc)'''
+
+    class Meta:
+        verbose_name = _('Teacher')
+        verbose_name_plural = _('Teachers')
+
+    user_profile = models.ForeignKey(UserProfile)
+    course = models.OneToOneField(Course)
+
+    def __unicode__(self):
+        return u'Teacher %s teaching %s' % (self.user_profile, self.course)
