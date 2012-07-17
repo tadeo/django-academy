@@ -25,8 +25,8 @@ class Course(models.Model):
     name = models.CharField(max_length=400, verbose_name=_('name'))
     description = models.TextField(blank=True, null=True, verbose_name=_('description'))
     active = models.BooleanField(default=False, verbose_name=_('active'))
-    start_date = models.DateField(verbose_name=_('start_date'))
-    end_date = models.DateField(verbose_name=_('end_date'))
+    start_date = models.DateField(blank=True, null=True, verbose_name=_('start_date'))
+    end_date = models.DateField(blank=True, null=True, verbose_name=_('end_date'))
 
     def __unicode__(self):
         return u'Course %s' % self.name
