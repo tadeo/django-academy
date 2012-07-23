@@ -1,6 +1,5 @@
 # Create your views here.
-
-from django.template.context import RequestContext
+from django.shortcuts import render_to_response
 from apps.main.models import Subscriber
 from apps.main.forms import SubscribeForm
 from django.views.generic.detail import DetailView
