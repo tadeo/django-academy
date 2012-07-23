@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django_extensions',
     'apps.main',
     'django_shell',
     'south',
@@ -164,6 +165,8 @@ LOGGING = {
         },
     }
 }
+
+AUTH_PROFILE_MODULE = 'main.UserProfile'
 
 ################################
 ####### LOCAL SETTINGS #########
