@@ -52,6 +52,12 @@ class Student(models.Model):
     approved = models.BooleanField(default=False)
 
     def __unicode__(self):
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        return u'Student %s at %s' % (self.user_profile, self.course)
+=======
+>>>>>>> 03b88ea8e023974b1142d3f125dc2df6aa23938e
         return u'Student %s at %s' % (self.user_profile, self.course)
 
 
@@ -67,3 +73,7 @@ class Teacher(models.Model):
 
     def __unicode__(self):
         return u'Teacher %s teaching %s' % (self.user_profile, self.course)
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> 03b88ea8e023974b1142d3f125dc2df6aa23938e
