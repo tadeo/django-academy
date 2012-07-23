@@ -12,6 +12,14 @@ ADMINS = (
     ('Tadeo Carrier', 'tadeouy@gmail.com'),
 )
 
+
+# To use gmail to send the emails
+#EMAIL_USE_TLS = True
+#EMAIL_HOST              = 'smtp.gmail.com'
+#EMAIL_PORT              = 587
+#EMAIL_HOST_USER         = 'test@gmail.com'
+#EMAIL_HOST_PASSWORD     = 'testpassword'
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -120,12 +128,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-#     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    'django_extensions',
     'apps.main',
+    'south',
 )
+LOGIN_URL = '/admin/'
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -154,6 +164,8 @@ LOGGING = {
         },
     }
 }
+
+AUTH_PROFILE_MODULE = 'main.UserProfile'
 
 ################################
 ####### LOCAL SETTINGS #########

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<script>
+	function sendMessage(formTag){
+		var emailTo = formTag.elements['email'].value;
+		if (emailTo == ''){
+			alert('Please put an email');
+		}else{
+			location.href = 'mailto:' + emailTo;
+		}
+		return false;
+	}
+</script>
+
+<form action="" onsubmit="" method="POST">
+	{% csrf_token %}
+	{{ form.as_ul }}
+	<button type="submit">Send</button>
+</form>
+
+<span class="errors">{{ form.errors }}</span>
+{% if message %}<span class="status">{{ message }}</span>{% endif %}
+
+{% if list_subscribers %}
+	<ul>
+	{% for ls in list_subscribers %}
+	    <li>
+	    	<strong>{{ ls.name }}</strong> - &lt;<a href="mailto:{{ ls.email }}">{{ ls.email }}</a>&gt;<br />
+	    </li>
+	    <hr />
+	{% endfor %}
+	</ul>
+{% endif %}
+{% endblock %}
+

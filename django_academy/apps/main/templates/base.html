@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load url from future %}
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -25,17 +26,25 @@
 		<div>
 			<header>
 				<h1><a href="{% url home %}"><img src="{{ STATIC_URL }}images/logo.png" alt="Django Academy" /></a></h1>
-				<nav>
-					<p>
-						<a href="{% url home %}">Home</a>
-					</p>
+				<nav class="main_menu">
+					<ul>
+						<li>
+							<a href="{% url 'home' %}">Home</a>
+						</li>
+						<li>
+							<a href="{% url 'subscribers' %}">Subscribers</a>
+						</li>
+						<li>
+							<a href="{% url 'subscribe' %}">Subscribe</a>
+						</li>
+					</ul>
 				</nav>
 			</header>
 			<section>
 				{% block main_content %}
 				{% endblock main_content %}
 			</section>
-
+			
 			<footer>
 				<p>
 				</p>

@@ -1,4 +1,9 @@
 .project
 .pydevproject
 *.pyc
-django_academy/local_settings.py
+*.sqlite
+/django_academy/local_settings.py
+/django_academy/static/
+.DS_Store
+.settings/
+/env/
