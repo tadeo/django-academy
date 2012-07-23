@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'apps.main',
+    'django_shell',
     'south',
 )
 LOGIN_URL = '/admin/'
