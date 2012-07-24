@@ -52,14 +52,14 @@ def subscribe(request):
     return render_to_response('subscribe.html', context)
 
 
-def listCourses(request):
+def list_courses(request):
     from django.core.context_processors import csrf
     context = {}
     context.update(csrf(request))
     
     list_courses = Course.objects.all().order_by('name')
     context.update({'list_courses':list_courses})
-    return render_to_response('listCourses.html', context)
+    return render_to_response('list_courses.html', context)
     
 class SubscriberDetailView(DetailView):
     def get(self, *args, **kwargs):
