@@ -24,22 +24,7 @@
 
 	<body>
 		<div>
-			<header>
-				<h1><a href="{% url 'home' %}"><img src="{{ STATIC_URL }}images/logo.png" alt="Django Academy" /></a></h1>
-				<nav class="main_menu">
-					<ul>
-						<li>
-							<a href="{% url 'home' %}">Home</a>
-						</li>
-						<li>
-							<a href="{% url 'subscribers' %}">Subscribers</a>
-						</li>
-						<li>
-							<a href="{% url 'subscribe' %}">Subscribe</a>
-						</li>
-					</ul>
-				</nav>
-			</header>
+			{% include 'header.html' %}
 			<section>
 				{% block main_content %}
 				{% endblock main_content %}
