@@ -5,9 +5,9 @@ import os, sys
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, SITE_ROOT)
 
+INTERNAL_IPS = ('127.0.0.1')
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Tadeo Carrier', 'tadeouy@gmail.com'),
@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'south',
 )
 LOGIN_URL = '/admin/'
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -177,3 +178,6 @@ except ImportError:
 ################################
 ###### END LOCAL SETTINGS ######
 ################################
+
+
+TEMPLATE_DEBUG = DEBUG
