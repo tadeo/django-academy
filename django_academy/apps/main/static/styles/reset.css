@@ -101,4 +101,6 @@ input, select {
     vertical-align:middle;
 }
 
-
+.clear {
+	clear: both;
+}

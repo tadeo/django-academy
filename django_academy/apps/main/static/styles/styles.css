@@ -1,1 +1,63 @@
 @import url("reset.css");
+
+body,
+html {
+	background: #092e20;
+	font-family: Verdana, sans-serif;
+	font-size: 0.9em;
+}
+
+body > div {
+	margin: auto;
+	width: 900px;
+	height: 100%;
+}
+
+h1 {
+	height: 90px;
+	padding-top: 20px;
+}
+
+header {
+	background: #092e20;	
+}
+
+header nav {
+	background: #000;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+header nav ul {
+	float: right;
+}
+
+header nav ul li {
+	display: inline;
+	float: left;
+}
+
+header nav ul li a,
+header nav ul li a:visited {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 0 10px;
+	line-height: 30px;
+}
+
+header nav ul li a:hover {
+	color: #fc3;
+}
+
+section {
+	position: relative;
+	background: #fff;
+	min-height: 400px;	
+	margin-bottom: 20px;
+}
+
+footer {
+	padding: 10px 20px;
+	background: rgba(255, 255, 255, 0.5);
+}
