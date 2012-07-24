@@ -5,6 +5,7 @@ import os, sys
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, SITE_ROOT)
 
+INTERNAL_IPS = ('127.0.0.1')
 
 DEBUG = False
 
