@@ -1,6 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response
-from apps.main.models import Subscriber
+from apps.main.models import Subscriber, Course
 from apps.main.forms import SubscribeForm
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required
@@ -52,6 +52,15 @@ def subscribe(request):
     return render_to_response('subscribe.html', context)
 
 
+def list_courses(request):
+    from django.core.context_processors import csrf
+    context = {}
+    context.update(csrf(request))
+    
+    list_courses = Course.objects.all().order_by('name')
+    context.update({'list_courses':list_courses})
+    return render_to_response('list_courses.html', context)
+    
 class SubscriberDetailView(DetailView):
     def get(self, *args, **kwargs):
         return super(SubscriberDetailView, self).get(*args, **kwargs)

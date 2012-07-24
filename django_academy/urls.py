@@ -17,6 +17,7 @@ urlpatterns = patterns('',
      url(r'^courses/$', ListView.as_view(model=Course, paginate_by=3), name='courses'),
      url(r'^courses/(?P<pk>\d+)$', CourseDetailView.as_view(model=Course), name='course_detail'),
     # url(r'^django_academy/', include('django_academy.foo.urls')),
+     url(r'^courses/$', 'apps.main.views.list_courses', name='list_courses'),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
