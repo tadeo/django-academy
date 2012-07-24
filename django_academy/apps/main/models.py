@@ -27,6 +27,7 @@ class Course(models.Model):
     active = models.BooleanField(default=False, verbose_name=_('active'))
     start_date = models.DateField(blank=True, null=True, verbose_name=_('start_date'))
     end_date = models.DateField(blank=True, null=True, verbose_name=_('end_date'))
+    thumb = models.ImageField(upload_to = 'thumbs/', blank = True, null = True, default='thumbs/course_default.gif', verbose_name=_('thumb'))
 
     def __unicode__(self):
         return u'Course %s' % self.name
@@ -35,9 +36,10 @@ class Course(models.Model):
 class UserProfile(models.Model):
     '''A model representing a Person'''
     user = models.OneToOneField(User)
+    thumb = models.ImageField(upload_to = 'thumbs/', blank = True, null = True, default='thumbs/user_default.gif', verbose_name=_('thumb'))
 
     def __unicode__(self):
-        return self.user.get_full_name() or self.user
+        return self.user.get_full_name() or unicode(self.user)
 
 
 class Student(models.Model):

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block main_content %}
+	<ul>
+	{% for object in object_list %}
+	    <li  style="list-style-type: none;">
+	    	<img style="width:20px; height: 20px; float: left; margin-right: 10px; " src="{{ MEDIA_URL }}{{ object.thumb }}" />
+	    	<strong><a href="{% url 'course_detail' pk=object.pk %}">{{ object.name }}</a></strong>;<br />
+	    </li>
+	    <hr />
+	{% endfor %}
+	</ul>
+	{% if is_paginated %}
+	<div class="pagination">
+		{% if page_obj.has_previous %}
+		<a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;&nbsp;&nbsp;Previous page</a>
+		{% endif %}
+		{% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}">Next page&nbsp;&nbsp;&nbsp;&gt;</a>
+		{% endif %}
+	</div>
+	{% endif %}
+{% endblock %}
+

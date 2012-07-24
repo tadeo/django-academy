@@ -7,3 +7,4 @@
 .DS_Store
 .settings/
 /env/
+django_academy/media/
