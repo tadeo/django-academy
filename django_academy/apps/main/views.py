@@ -56,5 +56,7 @@ class SubscriberDetailView(DetailView):
     def get(self, *args, **kwargs):
         return super(SubscriberDetailView, self).get(*args, **kwargs)
 
-
+class CourseDetailView(DetailView):
+    def get(self, *args, **kwargs):
+        return super(CourseDetailView, self).get(*args, **kwargs)
 
