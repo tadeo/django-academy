@@ -8,5 +8,5 @@ os.chdir('/home/tadeo/projects/django-academy')
 
 from fcgi import WSGIServer
 from django.core.handlers.wsgi import WSGIHandler
-os.environ['DJANGO_SETTINGS_MODULE'] = 'django-academy.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_academy.settings'
 WSGIServer(WSGIHandler()).run()
