@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load url from future %}
 
+{% block body_class %}course detail{% endblock body_class %}
+
 {% block main_content %}
 	<a href="{% url 'courses' %}">Courses</a>
 	<h3>{{ object.name }}</h3>
-	<p><img src="{{ MEDIA_URL }}{{ object.thumb }}" /></p>
+	
+	<p><img src="{{ MEDIA_URL }}{{ object.thumb }}" />{{ object.description }}</p>
 {% endblock %}
-

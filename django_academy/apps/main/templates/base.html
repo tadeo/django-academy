@@ -37,7 +37,7 @@
 		<link rel=stylesheet href="{{ STATIC_URL }}styles/styles.css" type="text/css" media="screen" />
 	</head>
 
-	<body>
+	<body class="{% block body_class %}{% endblock body_class %}">
 		<div>
 			{% include 'header.html' %}
 			<section>

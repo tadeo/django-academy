@@ -19,7 +19,7 @@ h1 {
 }
 
 header {
-	background: #092e20;	
+	background: #092e20;
 }
 
 header nav {
@@ -53,7 +53,7 @@ header nav ul li a:hover {
 section {
 	position: relative;
 	background: #fff;
-	min-height: 400px;	
+	min-height: 400px;
 	margin-bottom: 20px;
 }
 
@@ -61,3 +61,18 @@ footer {
 	padding: 10px 20px;
 	background: rgba(255, 255, 255, 0.5);
 }
+
+ul.object_index li a {
+	color: #333;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/********** course section **********/
+body.course.index ul.object_index li a img{
+	width: 10%;
+	display: block;
+}
+body.course.detail {
+}
+/********** end course section **********/
