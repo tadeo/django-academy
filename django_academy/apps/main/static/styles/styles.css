@@ -69,10 +69,23 @@ ul.object_index li a {
 }
 
 /********** course section **********/
+div.details_container.loading {
+	opacity: 0.5;
+}
+
 body.course.index ul.object_index li a img{
 	width: 10%;
 	display: block;
 }
-body.course.detail {
+
+body.course.detail ul.object_index {
+	list-style: none;
+	float: right;
+	padding: 10px;
+	background-color: #ccc;
+	margin: 10px;
+}
+body.course.detail ul.object_index li a img{
+	width: 20px;
 }
 /********** end course section **********/

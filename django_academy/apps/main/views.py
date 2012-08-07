@@ -56,16 +56,39 @@ def list_courses(request):
     from django.core.context_processors import csrf
     context = {}
     context.update(csrf(request))
-    
+
     list_courses = Course.objects.all().order_by('name')
     context.update({'list_courses':list_courses})
     return render_to_response('list_courses.html', context)
-    
+
 class SubscriberDetailView(DetailView):
     def get(self, *args, **kwargs):
         return super(SubscriberDetailView, self).get(*args, **kwargs)
 
+
 class CourseDetailView(DetailView):
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+#        context['object_list'] = Course.objects.all().order_by('name')
+        list_courses = Course.objects.all().order_by('name')
+        context.update({'object_list': list_courses})
+        return context
+
+#        context = kwargs
+#        context_object_name = self.get_context_object_name(self.object)
+#        if context_object_name:
+#            context[context_object_name] = self.object
+#        return context
+
+    def get_template_names(self):
+        if self.request.is_ajax():
+            import time
+            time.sleep(1.5)
+            return ('includes/included_course_detail.html',)
+        else:
+            return super(CourseDetailView, self).get_template_names()
+
     def get(self, *args, **kwargs):
         return super(CourseDetailView, self).get(*args, **kwargs)
 

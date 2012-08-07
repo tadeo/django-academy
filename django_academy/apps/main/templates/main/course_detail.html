@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 {% load url from future %}
 
+{% block post_scripts %}<script>
+	jQuery(document).ready(function() {
+		(function($) {
+			var $detailsContainer = $('div.details_container');
+			var $coursesLinks = $('ul.object_index li a');
+			$coursesLinks.click(function($event){
+				$detailsContainer.toggleClass('loading', true);
+				var url = $(this).attr('href');
+				$.get(url, function(data){
+					$detailsContainer.html(data);
+					$detailsContainer.toggleClass('loading', false);
+				});
+				return false;
+			});
+		})(jQuery);
+	});
+</script>{% endblock post_scripts %}
 {% block body_class %}course detail{% endblock body_class %}
 
 {% block main_content %}
-	<a href="{% url 'courses' %}">Courses</a>
-	<h3>{{ object.name }}</h3>
+	{% include "includes/included_courses_list.html" %}
 	
-	<p><img src="{{ MEDIA_URL }}{{ object.thumb }}" />{{ object.description }}</p>
+	<a href="{% url 'courses' %}">Courses</a>
+	<div class='details_container'>
+	{% include "includes/included_course_detail.html" %}
+	</div>
 {% endblock %}

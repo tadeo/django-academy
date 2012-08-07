@@ -28,7 +28,7 @@
 		{% endif %}
 		<!-- Add mousewheel plugin (this is optional) -->
 		<script type="text/javascript" src="{{ STATIC_URL }}libs/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-		
+		{% block post_scripts %}{% endblock post_scripts %}
 		<!-- Add fancyBox -->
 		<link rel="stylesheet" href="{{ STATIC_URL }}libs/fancybox/source/jquery.fancybox.css?v=2.0.6" type="text/css" media="screen" />
 		<script type="text/javascript" src="{{ STATIC_URL }}libs/fancybox/source/jquery.fancybox.pack.js?v=2.0.6"></script>
