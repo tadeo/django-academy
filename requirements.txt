@@ -1,6 +1,6 @@
 Django==1.4
 PIL==1.1.7
-Pygments==1.5
+Pygments==2.7.4
 South==0.7.5
 bpython==0.11
 distribute==0.6.24
